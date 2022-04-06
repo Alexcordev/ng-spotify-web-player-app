@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  margin-left: 255px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+}
+
+.container h1 {
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+.albums-row {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  column-gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px;
+  margin: 40px 15px;
+
+}

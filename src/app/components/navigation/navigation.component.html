@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="format-row">
+      <div class="nav-controls">
+        <button class="btn-format" mat-mini-fab color="dark">
+          <span class="material-icons md-24"> arrow_back_ios </span>
+        </button>
+        <button class="btn-format" mat-mini-fab color="dark">
+          <span class="material-icons md-24"> arrow_forward_ios </span>
+        </button>
+          <div *ngIf="categories.length > 0" class="input">
+            <span class="material-icons md-dark md-24">search</span>
+            <input placeholder="Search Astist">
+          </div>
+          </div>
+
+      <div class="drop-user">
+        <button mat-button [matMenuTriggerFor]="menu">
+
+            <span class="drop-user-infos"><span class="material-icons md-24 user-icon">person_outline</span>user<span style="display: inline-block; position: absolute; right: -30px" class="material-icons md-24">
+              arrow_drop_down
+              </span></span>
+
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span class="material-icons md-24">dialpad</span>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <span class="material-icons md-24">dialpad</span>
+            <span>Check voicemail</span>
+          </button>
+          <button mat-menu-item>
+            <span class="material-icons md-24">dialpad</span>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

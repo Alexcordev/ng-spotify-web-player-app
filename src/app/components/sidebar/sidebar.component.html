@@ -1,0 +1,64 @@
+<div class="example-container">
+  <mat-drawer-container class="dark">
+    <mat-drawer-content>
+      <div class="align-block">
+        <div class="brand">
+          <div class="logo-shape">
+            <span class="material-icons rotate md-36">
+              wifi
+               </span>
+          </div>
+
+
+           <h1>Spotify</h1>
+        </div>
+
+          <mat-list>
+            <mat-list-item>
+              <span class="material-icons md-36">
+                home
+                </span>
+                <a mat-button routerLink="/">Home</a>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="material-icons md-36">
+                search
+                </span>
+                <a mat-button (click)="goToSearchPage()">Search</a>
+            </mat-list-item>
+            <mat-list-item>
+              <span class="material-icons md-36">
+                library_books
+                </span>
+                <a mat-button routerLink=".">Your Library</a>
+            </mat-list-item>
+            <div class="v-space">
+
+            </div>
+            <mat-list-item>
+              <div class="icon-back">
+                <span class="material-icons md-18">
+                  add
+                  </span>
+              </div>
+                <a mat-button routerLink=".">Create Playlist</a>
+            </mat-list-item>
+            <mat-list-item>
+              <div class="icon-like">
+              <span class="material-icons md-18">
+                favorite
+                </span>
+              </div>
+                <a mat-button routerLink=".">Liked Songs</a>
+            </mat-list-item>
+
+          </mat-list>
+
+
+    </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+
+
