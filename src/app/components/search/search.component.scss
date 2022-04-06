@@ -6,6 +6,8 @@
   width: 100vw;
   height: 100vh;
   margin-left: 200px;
+  overflow-y: scroll;
+  margin-bottom: 80px;
 }
 
 .header {
@@ -23,6 +25,7 @@
 .albums-row {
   display: flex;
   width: 90%;
+  height: 100%;
   column-gap: 15px;
   justify-content: flex-start;
   align-items: center;
@@ -31,5 +34,28 @@
   margin-left: 60px;
   flex-wrap: wrap;
   row-gap: 15px;
+  margin-bottom: 80px;
 
+}
+
+.artist-infos-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-left: 80px;
+}
+
+.artist-infos-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 100%;
+    overflow-y: scroll;
+    margin-bottom: 60px;
 }

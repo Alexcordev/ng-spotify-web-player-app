@@ -1,9 +1,11 @@
+import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Observable, catchError, tap } from 'rxjs';
 
 
 import { environment } from 'src/environments/environment';
+import { Artist } from '../interfaces/artist';
 import { Category } from '../interfaces/category';
 
 @Injectable({
@@ -18,6 +20,7 @@ client_id = environment.client_id;
 client_secret = environment.client_secret;
 response: any = '';
 token: string = '';
+artistName: string = '';
 
 
 constructor(private http: HttpClient) { }
@@ -39,6 +42,15 @@ getToken() {
 
 }
 
+private handleError<T>(operation = 'operation', result?: T) {
+  return (error: any): Observable<T> => {
+    console.log(error);
+    console.log(`${operation} failed: ${error.message}`);
+    return of(result as T)
+  };
+}
+
+
 getArtist(artistName: string) {
   return this.http.get<any>('https://api.spotify.com/v1/search?type=artist&offset=0&limit=1&q=' + artistName);
 }
@@ -52,8 +64,13 @@ getTracks(id: any) {
 }
 
 getCategories() {
-  return this.http.get<any>(`https://api.spotify.com/v1/browse/categories`);
+  return this.http.get<any>(`https://api.spotify.com/v1/browse/categories?country=US`);
 }
 
+searchArtist(term: any): Observable<Artist[]> {
+
+  return this.http.get<Artist[]>('https://api.spotify.com/v1/search?type=artist&offset=0&limit=1&q=' + term);
+
+}
 
 }

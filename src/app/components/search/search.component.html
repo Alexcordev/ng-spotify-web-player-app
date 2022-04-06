@@ -1,10 +1,17 @@
-<app-navigation [categories]="categories"></app-navigation>
+<app-navigation #inputSearch (foundArtist)="onFoundArtist($event)" [categories]="categories"></app-navigation>
 <div class="full-height">
   <div class="container">
     <div>
       <app-sidebar></app-sidebar>
 
     </div>
+    <div class="artist-infos-container" *ngIf="artists.length > 0">
+      <h1>Search Results...</h1>
+      <div class="artist-infos-row">
+        <app-card *ngFor="let artist of artists" [name]="artist.name" [image]="artist.image"></app-card>
+      </div>
+    </div>
+
     <div class="header">
       <h1>Browse All</h1>
     </div>

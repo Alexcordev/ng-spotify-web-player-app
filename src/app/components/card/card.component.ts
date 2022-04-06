@@ -7,14 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input('title') title = '';
-  @Input('artist') artist = '';
+  @Input('name') name = '';
+  @Input('image') image = '';
 
   constructor() { }
 
   ngOnInit(): void {
-    this.title = 'Soy YO';
-    this.artist = 'Luis Miguel';
+
   }
 
 }

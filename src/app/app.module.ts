@@ -1,3 +1,4 @@
+import { SpotifyService } from 'src/app/services/spotify.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +14,7 @@ import { CategoryCardComponent } from './components/category-card/category-card.
 import { SearchComponent } from './components/search/search.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { TokenInterceptor } from './token.interceptor';
     HomeComponent,
     CardComponent,
     CategoryCardComponent,
-    SearchComponent
+    SearchComponent,
+    FilterPipe
 
   ],
   imports: [
@@ -38,6 +41,7 @@ import { TokenInterceptor } from './token.interceptor';
       useClass: TokenInterceptor,
       multi: true
     },
+    SpotifyService
   ],
   bootstrap: [AppComponent]
 })

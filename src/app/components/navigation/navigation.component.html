@@ -10,7 +10,7 @@
         </button>
           <div *ngIf="categories.length > 0" class="input">
             <span class="material-icons md-dark md-24">search</span>
-            <input placeholder="Search Astist">
+            <input #search (keyup)="getInputValue(search.value)" placeholder="Search Astist">
           </div>
           </div>
 
